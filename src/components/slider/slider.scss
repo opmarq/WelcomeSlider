@@ -4,7 +4,12 @@ $main_padding: 10px;
 
 .slider {
   &__container {
+    position: relative;
+    overflow: hidden;
+  }
+  &__scroll {
     display: flex;
+    position: absolute;
   }
 }
 

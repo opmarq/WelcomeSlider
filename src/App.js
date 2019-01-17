@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.options = {
-      cols: 2,
+      cols: 3,
       rows: 2
     };
   }
@@ -17,6 +17,39 @@ class App extends Component {
   render() {
     return (
       <Slider options={this.options}>
+        <CardImage
+          image={
+            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
+          }
+        />
+        <CardVideo
+          image={
+            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
+          }
+        />
+        <CardQuote>Lis is short, work somewhere awsome</CardQuote>
+        <CardImage
+          image={
+            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
+          }
+        />
+        <CardVideo
+          image={
+            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
+          }
+        />
+        <CardQuote>Lis is short, work somewhere awsome</CardQuote>
+        <CardImage
+          image={
+            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
+          }
+        />
+        <CardVideo
+          image={
+            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
+          }
+        />
+        <CardQuote>Lis is short, work somewhere awsome</CardQuote>
         <CardImage
           image={
             "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"

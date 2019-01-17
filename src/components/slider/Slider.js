@@ -12,13 +12,17 @@ class Slider extends Component {
     super(props);
   }
 
+  handleNavigation = side => {
+    console.log(side);
+  };
+
   render() {
     const { options } = this.props;
     return (
       <div className="slider">
         <Header
           name="Welcome To the jungle"
-          onClick={console.log}
+          onClick={this.handleNavigation}
           logo={logo}
         />
         <Container rows={options.rows} cols={options.cols}>
@@ -26,7 +30,7 @@ class Slider extends Component {
         </Container>
         <Footer className="footer">
           <img src={logo} alt="footer logo" className="logo__img" />
-          <a href="http://google.com" className="footer__link">
+          <a href="http://google.com" className="footer__ link">
             Voir le Profile
           </a>
         </Footer>
