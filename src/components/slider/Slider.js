@@ -10,14 +10,28 @@ import logo from "../../logo.svg";
 class Slider extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      progress: props.options.cols
+    };
   }
 
   handleNavigation = side => {
-    console.log(side);
+    let { progress } = this.state;
+    const { options, children } = this.props;
+
+    if (
+      progress + side >= options.cols &&
+      progress + side <= children.length / options.rows
+    ) {
+      this.setState({
+        progress: progress + side
+      });
+    }
   };
 
   render() {
     const { options } = this.props;
+    const { progress } = this.state;
     return (
       <div className="slider">
         <Header
@@ -25,12 +39,12 @@ class Slider extends Component {
           onClick={this.handleNavigation}
           logo={logo}
         />
-        <Container rows={options.rows} cols={options.cols}>
+        <Container rows={options.rows} cols={options.cols} progress={progress}>
           {this.props.children}
         </Container>
         <Footer className="footer">
           <img src={logo} alt="footer logo" className="logo__img" />
-          <a href="http://google.com" className="footer__ link">
+          <a href="http://google.com" className="footer__link">
             Voir le Profile
           </a>
         </Footer>
@@ -38,5 +52,12 @@ class Slider extends Component {
     );
   }
 }
+
+Slider.defaultProps = {
+  options: {
+    cols: 3,
+    rows: 2
+  }
+};
 
 export default Slider;

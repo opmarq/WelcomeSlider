@@ -23,7 +23,7 @@ class Container extends Component {
 
   buildCards = () => {
     const { height, width } = this.state;
-    const { cols, rows, children } = this.props;
+    const { cols, rows, children, progress } = this.props;
     const cardHeight = Math.round(height / rows);
     const cardWidth = Math.round(width / cols);
     const screenSize = cols * rows;
@@ -42,7 +42,10 @@ class Container extends Component {
     console.log(blockOfCards);
 
     return (
-      <div className="slider__scroll">
+      <div
+        className="slider__scroll"
+        style={{ transform: `translateX(-${progress * cardWidth}px)` }}
+      >
         {blockOfCards.map((item, index) => {
           return (
             <div style={{ float: "left", width: width }}>
