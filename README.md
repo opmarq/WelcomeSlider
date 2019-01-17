@@ -1,6 +1,8 @@
 # WelcomeSlider
 
-Dynamique slider made with react, to test it follow these commands
+Dynamique slider made with react, 
+
+To test it follow these commands
 
 1. `npm instal`
 2. `npm start`
