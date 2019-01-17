@@ -7,7 +7,7 @@ export const CardImage = ({ image, ...props }) => {
   return (
     <div className="card card--image" {...props}>
       <img className="card__image" src={image} />
-      <span className="card__image-zoom fas fa-search" />
+      <span className="card__ima fas fa-search" />
     </div>
   );
 };

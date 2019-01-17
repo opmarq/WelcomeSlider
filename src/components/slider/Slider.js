@@ -3,6 +3,7 @@ import propTypes from "prop-types";
 
 import Header from "./Header";
 import Container from "./Container";
+import Progress from "./Progress";
 import Footer from "./Footer";
 
 import logo from "../../logo.svg";
@@ -30,7 +31,7 @@ class Slider extends Component {
   };
 
   render() {
-    const { options } = this.props;
+    const { options, children } = this.props;
     const { progress } = this.state;
     return (
       <div className="slider">
@@ -42,6 +43,11 @@ class Slider extends Component {
         <Container rows={options.rows} cols={options.cols} progress={progress}>
           {this.props.children}
         </Container>
+        <Progress
+          min={0}
+          max={children.length / options.rows}
+          progress={progress}
+        />
         <Footer className="footer">
           <img src={logo} alt="footer logo" className="logo__img" />
           <a href="http://google.com" className="footer__link">
