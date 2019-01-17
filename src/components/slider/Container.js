@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import "../../grid.scss";
-
 class Container extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +33,6 @@ class Container extends Component {
           return React.cloneElement(child, {
             style: {
               ...child.props.style,
-              border: "1px solid #555555",
               height: cardHeight,
               width: cardWidth
             }
