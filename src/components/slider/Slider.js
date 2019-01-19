@@ -12,17 +12,54 @@ class Slider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      progress: props.options.cols
+      breakPoints: this.getBreakPoints(props.options),
+      cols: 3,
+      rows: 2,
+      progress: 3
     };
   }
 
+  componentDidMount = () => {
+    this.handleResponsiveness();
+    window.addEventListener("resize", this.handleResponsiveness);
+  };
+
+  getDerivedStateFromProps(props, state) {
+    return {
+      breakPoints: this.getBreakPoints(props.options)
+    };
+  }
+
+  handleResponsiveness = () => {
+
+    const { options } = this.props;
+    const { breakPoints } = this.state;
+    let currentWidth = window.innerWidth;
+    for (let i = breakPoints.length - 1; i >= 0; i--) {
+      if (currentWidth > breakPoints[i]) {
+        let matched = options[breakPoints[i]];
+        this.setState({
+          ...this.state,
+          cols: matched.cols,
+          rows: matched.rows,
+          progress: matched.cols
+        })
+        break;
+      }
+    }
+  }
+
+  getBreakPoints = (options) => {
+    return Object.keys(options).sort();
+  }
+
   handleNavigation = side => {
-    let { progress } = this.state;
-    const { options, children } = this.props;
+    let { progress, cols, rows } = this.state;
+    const { children } = this.props;
 
     if (
-      progress + side >= options.cols &&
-      progress + side <= children.length / options.rows
+      progress + side >= cols &&
+      progress + side <= children.length / rows
     ) {
       this.setState({
         progress: progress + side
@@ -31,8 +68,8 @@ class Slider extends Component {
   };
 
   render() {
-    const { options, children } = this.props;
-    const { progress } = this.state;
+    const { children } = this.props;
+    const { progress, cols, rows } = this.state;
     return (
       <div className="slider">
         <Header
@@ -40,12 +77,12 @@ class Slider extends Component {
           onClick={this.handleNavigation}
           logo={logo}
         />
-        <Container rows={options.rows} cols={options.cols} progress={progress}>
+        <Container rows={rows} cols={cols} progress={progress}>
           {this.props.children}
         </Container>
         <Progress
           min={0}
-          max={children.length / options.rows}
+          max={children.length / rows}
           progress={progress}
         />
         <Footer className="footer">
@@ -58,12 +95,5 @@ class Slider extends Component {
     );
   }
 }
-
-Slider.defaultProps = {
-  options: {
-    cols: 3,
-    rows: 2
-  }
-};
 
 export default Slider;

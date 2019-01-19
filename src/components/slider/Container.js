@@ -28,8 +28,6 @@ class Container extends Component {
     const cardWidth = Math.round(width / cols);
     const screenSize = cols * rows;
 
-    console.log(children);
-
     let blockOfCards = [];
 
     for (let i = 1; i <= Math.round(children.length / screenSize); i++) {
@@ -38,8 +36,6 @@ class Container extends Component {
         blockOfCards[i].push(children[i * j - 1]);
       }
     }
-
-    console.log(blockOfCards);
 
     return (
       <div
@@ -64,8 +60,6 @@ class Container extends Component {
         })}
       </div>
     );
-
-    console.log(blockOfCards);
   };
 
   render() {

@@ -9,8 +9,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.options = {
-      cols: 3,
-      rows: 2
+      0: {
+        cols: 2,
+        rows: 2
+      },
+      1024: {
+        cols: 3,
+        rows: 2
+      }
     };
   }
 
