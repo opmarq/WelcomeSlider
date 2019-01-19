@@ -29,14 +29,16 @@ class Container extends Component {
     const screenSize = cols * rows;
 
     let blockOfCards = [];
-
-    for (let i = 1; i <= Math.round(children.length / screenSize); i++) {
-      blockOfCards[i] = [];
-      for (let j = 1; j <= screenSize; j++) {
-        blockOfCards[i].push(children[i * j - 1]);
-      }
+    let counter = 0;
+    debugger;
+    for (let i = 0; i < children.length; i++) {
+      if (i % screenSize === 0)
+      {
+        counter++
+        blockOfCards[counter] = [];
+      } 
+      blockOfCards[counter].push(children[i])
     }
-
     return (
       <div
         className="slider__scroll"

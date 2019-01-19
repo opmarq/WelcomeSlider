@@ -12,10 +12,10 @@ class Slider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      breakPoints: this.getBreakPoints(props.options),
-      cols: 3,
-      rows: 2,
-      progress: 3
+      breakPoints: Object.keys(props.options).sort(),
+      cols: 1,
+      rows: 1,
+      progress: 1
     };
   }
 
@@ -24,9 +24,9 @@ class Slider extends Component {
     window.addEventListener("resize", this.handleResponsiveness);
   };
 
-  getDerivedStateFromProps(props, state) {
+  static getDerivedStateFromProps(props, state) {
     return {
-      breakPoints: this.getBreakPoints(props.options)
+      breakPoints: Object.keys(props.options).sort()
     };
   }
 
@@ -47,10 +47,6 @@ class Slider extends Component {
         break;
       }
     }
-  }
-
-  getBreakPoints = (options) => {
-    return Object.keys(options).sort();
   }
 
   handleNavigation = side => {

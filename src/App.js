@@ -14,7 +14,7 @@ class App extends Component {
         rows: 2
       },
       1024: {
-        cols: 3,
+        cols: 5,
         rows: 2
       }
     };
@@ -23,50 +23,18 @@ class App extends Component {
   render() {
     return (
       <Slider options={this.options}>
-        <CardImage
-          image={
-            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
-          }
-        />
-        <CardVideo
-          image={
-            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
-          }
-        />
-        <CardQuote>Lis is short, work somewhere awsome</CardQuote>
-        <CardImage
-          image={
-            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
-          }
-        />
-        <CardVideo
-          image={
-            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
-          }
-        />
-        <CardQuote>Lis is short, work somewhere awsome</CardQuote>
-        <CardImage
-          image={
-            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
-          }
-        />
-        <CardVideo
-          image={
-            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
-          }
-        />
-        <CardQuote>Lis is short, work somewhere awsome</CardQuote>
-        <CardImage
-          image={
-            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
-          }
-        />
-        <CardVideo
-          image={
-            "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?cs=srgb&dl=architecture-buildings-church-338515.jpg&fm=jpg"
-          }
-        />
-        <CardQuote>Lis is short, work somewhere awsome</CardQuote>
+        <CardQuote>1</CardQuote>
+        <CardQuote>2</CardQuote>
+        <CardQuote>3</CardQuote>
+        <CardQuote>4</CardQuote>
+        <CardQuote>5</CardQuote>
+        <CardQuote>6</CardQuote>
+        <CardQuote>7</CardQuote>
+        <CardQuote>8</CardQuote>
+        <CardQuote>9</CardQuote>
+        <CardQuote>10</CardQuote>
+        <CardQuote>11</CardQuote>
+        <CardQuote>12</CardQuote>
       </Slider>
     );
   }
