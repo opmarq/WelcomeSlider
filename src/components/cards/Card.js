@@ -1,12 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "./style.scss";
 
 export const CardImage = ({ image, ...props }) => {
   return (
     <div className="card card--image" {...props}>
-      <img className="card__image" src={image} />
+      <img className="card__image" src={image} alt="card" />
       <span className="card__ima fas fa-search" />
     </div>
   );
@@ -15,7 +14,7 @@ export const CardImage = ({ image, ...props }) => {
 export const CardVideo = ({ image, ...props }) => {
   return (
     <div className="card card--video" {...props}>
-      <img className="card__image" src={image} />
+      <img className="card__image" src={image}  alt="card" />
       <div className="card__content">
         <div className="card__meta">
           <span className="card__play fas fa-play" />
@@ -36,8 +35,4 @@ export const CardQuote = ({ children, ...props }) => {
       <blockquote className="card__quote">{children}</blockquote>
     </div>
   );
-};
-
-CardVideo.PropTypes = {
-  image: PropTypes.string
 };

@@ -45,7 +45,7 @@ class Container extends Component {
       >
         {blockOfCards.map((item, index) => {
           return (
-            <div style={{ float: "left", width: width }}>
+            <div style={{ float: "left", width: width }} key={index} >
               {React.Children.map(blockOfCards[index], (child, index) => {
                 return React.cloneElement(child, {
                   style: {

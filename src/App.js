@@ -13,7 +13,6 @@ class App extends Component {
     super(props);
 
     let params = urlParser(window.location.href)
-    debugger;
     this.options = {
       0: {
         cols: 1,
