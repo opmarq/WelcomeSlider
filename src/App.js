@@ -10,11 +10,11 @@ class App extends Component {
     super(props);
     this.options = {
       0: {
-        cols: 2,
-        rows: 2
+        cols: 1,
+        rows: 1
       },
       1024: {
-        cols: 5,
+        cols: 3,
         rows: 2
       }
     };

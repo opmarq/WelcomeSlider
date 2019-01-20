@@ -24,19 +24,18 @@ class Container extends Component {
   buildCards = () => {
     const { height, width } = this.state;
     const { cols, rows, children, progress } = this.props;
-    const cardHeight = Math.round(height / rows);
-    const cardWidth = Math.round(width / cols);
+    const cardHeight = height / rows;
+    const cardWidth = width / cols;
     const screenSize = cols * rows;
 
-    let blockOfCards = [];
+    let blockOfCards = [[]];
     let counter = 0;
-    debugger;
     for (let i = 0; i < children.length; i++) {
-      if (i % screenSize === 0)
-      {
+
+      if (i % screenSize === 0 && i !== 0) {
         counter++
         blockOfCards[counter] = [];
-      } 
+      }
       blockOfCards[counter].push(children[i])
     }
     return (
