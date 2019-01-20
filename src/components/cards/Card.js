@@ -20,8 +20,9 @@ export const CardVideo = ({ image, ...props }) => {
         <div className="card__meta">
           <span className="card__play fas fa-play" />
           <div className="card__metacontent">
-            <h2>Hello World</h2>
-            <p>Co-Founder</p>
+            {
+              props.children
+            }
           </div>
         </div>
       </div>
