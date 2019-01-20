@@ -20,21 +20,28 @@ class App extends Component {
     };
   }
 
+
   render() {
     return (
       <Slider options={this.options}>
-        <CardQuote>1</CardQuote>
-        <CardQuote>2</CardQuote>
-        <CardQuote>3</CardQuote>
-        <CardQuote>4</CardQuote>
-        <CardQuote>5</CardQuote>
-        <CardQuote>6</CardQuote>
-        <CardQuote>7</CardQuote>
-        <CardQuote>8</CardQuote>
-        <CardQuote>9</CardQuote>
-        <CardQuote>10</CardQuote>
-        <CardQuote>11</CardQuote>
-        <CardQuote>12</CardQuote>
+        <CardQuote>Nothing else matters.</CardQuote>
+        <CardImage image={"http://lorempixel.com/900/801/"} />
+        <CardVideo image={"http://lorempixel.com/900/802/"} />
+        <CardImage image={"http://lorempixel.com/900/803/"} />
+        <CardVideo image={"http://lorempixel.com/900/804/"} />
+        <CardQuote>Nothing else matters.</CardQuote>
+        <CardQuote>Nothing else matters.</CardQuote>
+        <CardImage image={"http://lorempixel.com/900/801/"} />
+        <CardVideo image={"http://lorempixel.com/900/802/"} />
+        <CardImage image={"http://lorempixel.com/900/803/"} />
+        <CardVideo image={"http://lorempixel.com/900/804/"} />
+        <CardQuote>Nothing else matters.</CardQuote>
+        <CardQuote>Nothing else matters.</CardQuote>
+        <CardImage image={"http://lorempixel.com/900/801/"} />
+        <CardVideo image={"http://lorempixel.com/900/802/"} />
+        <CardImage image={"http://lorempixel.com/900/803/"} />
+        <CardVideo image={"http://lorempixel.com/900/804/"} />
+        <CardQuote>Nothing else matters.</CardQuote>
       </Slider>
     );
   }
