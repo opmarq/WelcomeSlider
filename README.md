@@ -7,7 +7,7 @@ To test it follow these commands
 1. `npm instal`
 2. `npm start`
 
-A new browser window with all tha magic will openup ;)
+A new browser window with all the magic will openup ;)
 
 ## Changing the layout
 
